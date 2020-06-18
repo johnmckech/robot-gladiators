@@ -26,9 +26,8 @@ var enemyAttack = 12;
 
 var fight = function(enemyName) {
   // Alert users that they are starting the round
-  window.alert("Welcome to Robot Gladiators!");
-
-  //Subtract the value of `playerAttack` from the value of `enemyHealth` and use that result to update the value in the `enemyHealth` variable
+  while(enemyHealth > 0) {
+      //Subtract the value of `playerAttack` from the value of `enemyHealth` and use that result to update the value in the `enemyHealth` variable
   enemyHealth = enemyHealth - playerAttack;
   // Log a resulting message to the console so we know that it worked.
   console.log(
@@ -42,8 +41,15 @@ var fight = function(enemyName) {
   );
 
 };
+
+  }
+
+
 for(var i = 0; i < enemyNames.length; i++) {
-  fight(enemyNames[i]);
+  pickedEnemyName = enemyNames[i];
+  enemyHealth = 50;
+  //call fight function with enemy robot
+  fight(pickedEnemyName);
 }
 
   
